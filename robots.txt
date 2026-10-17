@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kenei631-cmd.github.io/island-jiu-jitsu-washington/sitemap.xml

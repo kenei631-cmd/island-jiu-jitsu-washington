@@ -1,0 +1,15 @@
+{
+  "name": "Island Jiu-Jitsu Washington",
+  "short_name": "IJJ Washington",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#0c1419",
+  "theme_color": "#0c1419",
+  "icons": [
+    {
+      "src": "assets/images/island-jiu-jitsu-washington-logo.png",
+      "sizes": "1127x392",
+      "type": "image/png"
+    }
+  ]
+}
