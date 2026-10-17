@@ -118,3 +118,10 @@
 
 /* Equal Train With Purpose gallery frames */
 .home-page .home-purpose .purpose-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start}.home-page .home-purpose .purpose-grid figure,.home-page .home-purpose .purpose-grid figure:first-child{grid-column:auto;margin:0;min-width:0}.home-page .home-purpose .purpose-grid img,.home-page .home-purpose .purpose-grid figure:first-child img{display:block;width:100%;height:300px;max-height:none;object-fit:cover;object-position:center;background:#15242c}.home-page .home-purpose .purpose-grid figure:nth-child(3) img{object-position:center 22%}@media(max-width:760px){.home-page .home-purpose .purpose-grid{grid-template-columns:1fr;gap:22px}.home-page .home-purpose .purpose-grid img,.home-page .home-purpose .purpose-grid figure:first-child img{height:280px}}
+
+
+/* Equal homepage program-card image frames */
+.home-page .cards .card img{display:block;width:100%;height:auto;aspect-ratio:4/3;max-height:none;object-fit:cover;object-position:center 48%;background:#15242c}.home-page .cards .card:nth-child(1) img{object-position:center 56%}.home-page .cards .card:nth-child(2) img{object-position:center 50%}.home-page .cards .card:nth-child(3) img{object-position:center 48%}
+
+/* Verified academy hours */
+.academy-hours{margin:22px 0 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.22)}.academy-hours .eyebrow{margin:0 0 10px}.academy-hours dl{display:grid;grid-template-columns:max-content 1fr;gap:8px 18px;margin:0}.academy-hours dt{font-weight:800}.academy-hours dd{margin:0;line-height:1.45}
