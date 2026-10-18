@@ -125,3 +125,7 @@
 
 /* Verified academy hours */
 .academy-hours{margin:22px 0 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.22)}.academy-hours .eyebrow{margin:0 0 10px}.academy-hours dl{display:grid;grid-template-columns:max-content 1fr;gap:8px 18px;margin:0}.academy-hours dt{font-weight:800}.academy-hours dd{margin:0;line-height:1.45}
+
+
+/* Smokey Point location-page linking */
+.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;color:#c5d1d5;font-size:.82rem}.breadcrumb a{color:var(--sea);font-weight:800;text-decoration:underline}.hero-location-link,.inline-location-link{color:var(--sea);font-weight:800;text-decoration:underline;text-underline-offset:3px}.hero-location-link{display:inline-block;margin-top:-6px}.location-route-callout{background:#dff0f2;border-top:1px solid #b8d5d8;border-bottom:1px solid #b8d5d8}.location-route-callout p{margin:0;padding:18px 0;font-weight:800}.location-route-callout a{color:#0d5962;text-decoration:underline;text-underline-offset:3px}.section.dark .address-card{background:#fff;color:var(--ink)}.section.dark .address-card p,.section.dark .address-card address{color:#43555e}
