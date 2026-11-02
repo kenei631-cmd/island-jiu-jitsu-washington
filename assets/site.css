@@ -20,27 +20,7 @@
 .curated-gallery{gap:15px}.curated-gallery img{height:265px;object-fit:cover;background:#e5e9e9}
 @media(max-width:760px){.community-grid{grid-template-columns:1fr 1fr;gap:8px}.community-grid img{height:175px}.academy-photo-strip{grid-template-columns:1fr 1fr;gap:8px}.academy-photo-strip img{height:180px}.academy-photo-strip img:last-child{display:none}.curated-gallery img{height:170px}}
 
-/* ==========================================================
-   3 MONTHS FOR $300 PROMOTION
-   To disable all promotional elements, set PROMO_ENABLED=false
-   near the top of script.js. No HTML edits are needed.
-   ========================================================== */
-.promo-feature{background:#11252b;color:#fff;padding:34px 0;border-top:3px solid #66b6c5;border-bottom:3px solid #66b6c5}
-.promo-feature-inner{display:flex;align-items:center;justify-content:space-between;gap:28px}
-.promo-kicker,.promo-modal-eyebrow{font-size:.78rem;letter-spacing:.19em;font-weight:800;color:#9ad5df;margin-bottom:8px}
-.promo-feature h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.5rem,5.5vw,4.6rem);line-height:1;margin:0 0 10px}
-.promo-feature h2 span,.promo-modal h2 span{color:#66b6c5}
-.promo-feature p{margin:0;max-width:670px;color:#e3ebed}
-.promo-feature-cta{white-space:nowrap}
-.promo-schedule{border-top:3px solid #66b6c5}
-.promo-modal[hidden]{display:none!important}
-.promo-modal{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.78);display:flex;align-items:center;justify-content:center;padding:18px}
-.promo-dialog{position:relative;width:min(100%,510px);padding:clamp(28px,5vw,52px);background:#132329;border:1px solid #66b6c5;box-shadow:0 22px 80px rgba(0,0,0,.5);text-align:center;color:#fff}
-.promo-modal h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3.3rem,10vw,5.8rem);font-weight:900;line-height:.95;margin:16px 0 20px}
-.promo-modal p{color:#e1e9eb;margin:0 auto 24px;max-width:370px;line-height:1.6}
-.promo-close{position:absolute;top:8px;right:12px;background:transparent;color:white;border:0;font-size:2rem;cursor:pointer;padding:4px 10px}
-.promo-no-thanks{display:block;margin:18px auto 0;border:0;background:transparent;color:#c2d0d3;text-decoration:underline;cursor:pointer;font:inherit}
-@media(max-width:680px){.promo-feature-inner{flex-direction:column;align-items:flex-start}.promo-feature-cta{white-space:normal}.promo-dialog{padding:32px 22px}}
+
 
 /* Homepage-only user-approved photograph updates */
 .hero.photo{background-image:linear-gradient(90deg,rgba(6,12,16,.95),rgba(6,12,16,.78) 45%,rgba(6,12,16,.25)),url("images/ijj-washington-hero-team.webp");background-position:center 46%}
@@ -78,7 +58,7 @@
 .home-page .card img{height:auto;aspect-ratio:4/3;object-fit:contain;object-position:center;background:#15242c;display:block}
 .home-page .home-community .community-grid img{height:auto;max-height:none;object-fit:contain}
 .home-page .home-community .community-grid figure{align-self:start}
-.home-page .promo-feature strong{display:inline-block;letter-spacing:.08em;margin-bottom:6px;color:#fff}
+
 @media(max-width:1050px) and (min-width:761px){.home-page .cards{grid-template-columns:repeat(3,minmax(0,1fr))}.home-page .card-body{padding:20px}.home-page .card-body h3{font-size:2rem}}
 @media(max-width:380px){.home-page .brand img{width:180px}.home-page .head-inner{gap:10px}.home-page .hero h1{font-size:12vw}}
 .home-page .home-community .community-grid figure:first-child img{height:auto;max-height:none}
@@ -144,3 +124,18 @@
 .home-page .instagram-card-image img.youth-community-photo{object-fit:contain;object-position:center;background:#15242c;transform:none}
 .home-page .instagram-card:hover .instagram-card-image img.youth-community-photo{transform:none}
 .content-card img.contact-community-photo{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;object-position:center;background:#15242c}
+
+/* Offer-led homepage hero; no popup or duplicated promotional strip. */
+.home-page .hero.hero-offer{padding:68px 0 72px;min-height:570px}
+.home-page .hero.hero-offer h1{font-size:clamp(4.6rem,8.2vw,7.5rem);max-width:900px;margin:16px 0 14px}
+.home-page .hero.hero-offer .hero-offer-dates{font-size:.85rem;letter-spacing:.08em;color:#f4f7f7;margin:0 0 18px}
+.home-page .hero.hero-offer .hero-offer-copy{max-width:660px;font-size:1.03rem;line-height:1.65;margin:0}
+.home-page .hero.hero-offer .hero-offer-copy strong{color:#fff}
+.home-page .hero.hero-offer .buttons{margin-top:26px}
+.home-page .hero.hero-offer .hero-location-links{margin-top:24px;font-size:.81rem;line-height:1.6}
+@media(max-width:760px){
+  .home-page .hero.hero-offer{min-height:0;padding:46px 0 52px}
+  .home-page .hero.hero-offer h1{font-size:clamp(3.4rem,16vw,5.4rem);margin:16px 0 14px}
+  .home-page .hero.hero-offer .hero-offer-copy{font-size:.97rem}
+  .home-page .hero.hero-offer .hero-location-links{margin-top:22px;gap:10px}
+}
