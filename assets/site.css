@@ -138,3 +138,9 @@
 /* Authentic community photo: preserve all subjects in the existing equal-size frames. */
 .home-page .cards .card:nth-child(3) img.authentic-program-photo,.content-card img.authentic-program-photo{object-fit:contain;object-position:center;background:#15242c}
 .card-body .photo-context,.card-copy .photo-context{font-size:.75rem;line-height:1.4;color:#52646a;margin:10px 0 14px}
+
+/* Approved recruitment photos: retain complete subjects and existing homepage frame sizes. */
+.home-page .cards .card:nth-child(2) img.youth-lesson-photo{object-fit:contain;object-position:center;background:#15242c}
+.home-page .instagram-card-image img.youth-community-photo{object-fit:contain;object-position:center;background:#15242c;transform:none}
+.home-page .instagram-card:hover .instagram-card-image img.youth-community-photo{transform:none}
+.content-card img.contact-community-photo{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;object-position:center;background:#15242c}
