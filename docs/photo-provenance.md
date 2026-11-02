@@ -1,0 +1,15 @@
+# Site photo provenance and removal of generated photography
+
+The original supplied `IJJ_Washington_Home.html` contains the academy group, adult group, youth group, tournament team, youth community, tournament match and medal photos. The optimized versions of these existing photos match the source compositions after resizing and re-encoding. This verifies their origin in the supplied site; it is not an independent forensic certification of the original photographs.
+
+The homepage's Instagram preview was obtained from the supplied public post, rather than generated. The William Wallace collection in `assets/photos/library.json` was imported from the user's ZIP with deterministic resizing and WebP encoding only. Visible photographer watermarks were retained.
+
+The image `assets/images/ladies-friday-nights-jiu-jitsu.webp` was generated during the earlier site build and used on the homepage, Smokey Point and Lakewood/North Marysville pages. It is the one confirmed generated photograph identified in the site's development history. The present update removes this generated asset and replaces its three page references with a photograph from the user-uploaded library, with accurate alt text that does not present a competition or mixed-group scene as a women-only class.
+
+Relevant photographs of real staff/students are preferred over generic decorative people imagery. The rationale follows Nielsen Norman Group's [Photos as Web Content](https://www.nngroup.com/articles/photos-as-web-content/) and [7 Tips for Memorable and Easy-to-Understand Imagery](https://www.nngroup.com/articles/7-tips-memorable-imagery/): imagery should carry useful information, support nearby text and preserve its relevance on mobile. Existing real group and community photos do not need replacement merely because additional library images are available.
+
+Keep the current Netlify domain and pre-launch SEO settings unchanged. Validate the actual program-card frames in context before deployment and verify the generated asset returns a true 404 after publication.
+
+Replacement: `IMG_5407.jpeg`, catalog ID `ww-adf99b155897`. The displayed image is the existing 960-pixel medium WebP, with 320/960/1920-pixel responsive variants. The image shows a mixed academy community, not a women-only session. A visible community-photo caption and factual alt text make this distinction explicit. No watermark removal, compositional cropping or generative editing was performed.
+
+Live verification completed on November 2, 2026. Netlify deployment `6ae8fa0fc28fd1da457448a5` is ready. All three affected pages display the library replacement and community caption. All ten public pages contain no reference to the removed generated photo, and its former URL on the current Netlify site returns HTTP 404. The replacement's served bytes match the catalog hash, and desktop/mobile checks confirm full-frame containment while keeping the homepage photo frames equal. This removal applies to the current deployment; prior immutable deployment snapshots and Git history are not rewritten.

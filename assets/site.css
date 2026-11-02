@@ -134,3 +134,7 @@
 
 /* Current weekly schedule */
 .schedule-membership{margin:28px 0 0;padding:28px 30px;border:1px solid #bfd9dc;background:#e6f3f4}.schedule-membership h2{margin:4px 0 12px}.schedule-membership ul{margin:0;padding-left:20px}.schedule-membership li{margin:6px 0}.schedule-membership p:last-child{margin:16px 0 0}@media(max-width:640px){.schedule-membership{padding:22px 18px}}
+
+/* Authentic community photo: preserve all subjects in the existing equal-size frames. */
+.home-page .cards .card:nth-child(3) img.authentic-program-photo,.content-card img.authentic-program-photo{object-fit:contain;object-position:center;background:#15242c}
+.card-body .photo-context,.card-copy .photo-context{font-size:.75rem;line-height:1.4;color:#52646a;margin:10px 0 14px}
