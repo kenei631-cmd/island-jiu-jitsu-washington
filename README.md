@@ -55,3 +55,26 @@ python3 -m http.server 8001 --directory netlify-dist
 ```
 
 Class times, pricing, and offers should be reviewed and updated whenever they change.
+
+## Web-optimized photo repository
+
+Browse <https://island-jiu-jitsu-washington.netlify.app/photo-library.html> for filename search, orientation filtering, previews, direct image URLs and responsive HTML snippets. Download the filename/URL inventory at <https://island-jiu-jitsu-washington.netlify.app/assets/photos/library.csv>.
+
+The William Wallace ZIP contains 372 photos and one MOV. This import hosts 352 unique photos after removing 20 exact duplicate copies, with the duplicates mapped in the catalog. The video is excluded from this photo-only import; the original ZIP and original photos remain untouched outside the Git repository.
+
+Each photo has three WebP variants, capped at 320, 960 and 1920 pixels on its longest edge, with no upscaling or cropping. The collection's 1,056 variants total 102,292,524 bytes, compared with 916,512,845 bytes of source photos including duplicate copies. Large versions alone total 74,876,604 bytes. EXIF/GPS/XMP metadata is stripped, orientation is corrected, and embedded color profiles are normalized where supported. Existing visible watermarks are retained.
+
+Files live in `assets/photos/william-wallace/`, and `assets/photos/library.json` maps original filenames to dimensions, hashes and variant paths. Content hashes in filenames support long-lived Netlify caching. Keep these URLs stable; do not delete a hosted file that has been used in page content.
+
+The library is publicly reachable, not a private media vault. It uses noindex and is intentionally absent from the marketing navigation and sitemap. Confirm model/parent permissions and photographer rights before using a photo in advertising or public marketing. Replace the copied HTML's generic alt-text placeholder with a truthful description of the selected image.
+
+To recreate this specific collection from the same source archive, install Pillow with WebP support and run:
+
+```bash
+python3 scripts/optimize_photos.py /path/to/iCloudPhotosfromWilliamWallace.zip
+python3 scripts/build_netlify.py
+```
+
+Future collections should have their own folder and be merged into the catalog rather than overwriting this collection. Photo optimization is performed once locally; Netlify builds only copy the committed optimized files, so deployment does not require the original ZIP or Pillow.
+
+Image-display choices follow [web.dev responsive-image guidance](https://web.dev/learn/design/responsive-images) for full-frame `object-fit: contain`, real dimensions and responsive width descriptors, and [browser lazy-loading guidance](https://web.dev/articles/browser-level-image-lazy-loading) for deferred offscreen thumbnails and reserved image space.

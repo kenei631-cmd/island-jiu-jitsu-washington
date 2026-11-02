@@ -43,6 +43,16 @@ for filename in ["robots.txt", "sitemap.xml", "site.webmanifest"]:
     "  X-Content-Type-Options: nosniff\n"
     "  Referrer-Policy: strict-origin-when-cross-origin\n"
     "/assets/site.css\n"
+    "  Cache-Control: public, max-age=0, must-revalidate\n"
+    "/assets/photos/william-wallace/*\n"
+    "  Cache-Control: public, max-age=31536000, immutable\n"
+    "/assets/photos/library.json\n"
+    "  Cache-Control: public, max-age=0, must-revalidate\n"
+    "/assets/photos/library.csv\n"
+    "  Cache-Control: public, max-age=0, must-revalidate\n"
+    "/assets/photo-library.css\n"
+    "  Cache-Control: public, max-age=0, must-revalidate\n"
+    "/assets/photo-library.js\n"
     "  Cache-Control: public, max-age=0, must-revalidate\n",
     encoding="utf-8",
 )
