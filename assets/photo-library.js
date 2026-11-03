@@ -119,7 +119,7 @@
     const savedBytes = summary.originalPhotoBytes - summary.optimizedTotalBytes;
     const savedPercent = summary.originalPhotoBytes > 0
       ? (savedBytes / summary.originalPhotoBytes) * 100 : 0;
-    byId('pl-savings').textContent = summary.originalPhotoBytes === 0 ? '—'
+    byId('pl-savings').textContent = summary.originalPhotoBytes === 0 ? 'Not available'
       : savedBytes >= 0 ? `${savedPercent.toFixed(1)}%` : `${Math.abs(savedPercent).toFixed(1)}% larger`;
     const comparison = savedBytes >= 0
       ? `${formatBytes(savedBytes)} saved versus the original photos`

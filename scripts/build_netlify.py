@@ -10,6 +10,7 @@ import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "netlify-dist"
+SOURCE_ORIGIN = "https://kenei631-cmd.github.io/island-jiu-jitsu-washington"
 STAGING_ORIGIN = os.environ.get("DEPLOY_PRIME_URL") or os.environ.get("URL") or "https://island-jiu-jitsu-washington.netlify.app"
 STAGING_ORIGIN = STAGING_ORIGIN.rstrip("/")
 if not STAGING_ORIGIN.startswith("https://"):
@@ -20,7 +21,7 @@ if OUTPUT.exists():
 OUTPUT.mkdir()
 
 for page in ROOT.glob("*.html"):
-    source = page.read_text(encoding="utf-8")
+    source = page.read_text(encoding="utf-8").replace(SOURCE_ORIGIN, STAGING_ORIGIN)
     if page.name == "contact.html":
         source, count = re.subn(
             r'(<input\b[^>]*name="_next"[^>]*value=")[^"]*(")',
@@ -32,8 +33,10 @@ for page in ROOT.glob("*.html"):
     (OUTPUT / page.name).write_text(source, encoding="utf-8")
 
 shutil.copytree(ROOT / "assets", OUTPUT / "assets")
-for filename in ["robots.txt", "sitemap.xml", "site.webmanifest"]:
-    shutil.copy2(ROOT / filename, OUTPUT / filename)
+for filename in ["robots.txt", "sitemap.xml"]:
+    content = (ROOT / filename).read_text(encoding="utf-8").replace(SOURCE_ORIGIN, STAGING_ORIGIN)
+    (OUTPUT / filename).write_text(content, encoding="utf-8")
+shutil.copy2(ROOT / "site.webmanifest", OUTPUT / "site.webmanifest")
 
 # Allow crawling so bots can see noindex, but do not index the pre-launch copy.
 # This header is Netlify-only: it does not alter the GitHub Pages site.
@@ -57,6 +60,8 @@ for filename in ["robots.txt", "sitemap.xml", "site.webmanifest"]:
     "/assets/gallery.css\n"
     "  Cache-Control: public, max-age=0, must-revalidate\n"
     "/assets/gallery.js\n"
+    "  Cache-Control: public, max-age=0, must-revalidate\n"
+    "/assets/about.css\n"
     "  Cache-Control: public, max-age=0, must-revalidate\n",
     encoding="utf-8",
 )

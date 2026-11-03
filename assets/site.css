@@ -148,3 +148,6 @@
 .home-page .instagram-featured .instagram-card-image img{object-position:center bottom}
 @media(max-width:940px){.home-page .instagram-feed{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.home-page .instagram-feed{grid-template-columns:1fr}}
+
+/* Shared navigation includes About on every page. */
+@media(max-width:1150px){.menu-toggle{display:block}.nav{display:none;position:absolute;left:0;right:0;top:100%;background:#0c161c;padding:20px 6%;flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:13px 0;border-bottom:1px solid #263942}}

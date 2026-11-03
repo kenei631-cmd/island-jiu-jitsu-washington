@@ -1,0 +1,94 @@
+{
+  "professor-brandon-wiygul": [
+    {
+      "path": "assets/images/professor-brandon-wiygul-ijj-small.webp",
+      "width": 480,
+      "height": 436,
+      "bytes": 28640,
+      "sha256": "edaaf41fc9c56b329f980dbadd242c011d7d52164f4734137b3438ab2788b8ea"
+    },
+    {
+      "path": "assets/images/professor-brandon-wiygul-ijj-medium.webp",
+      "width": 960,
+      "height": 873,
+      "bytes": 76714,
+      "sha256": "e16f221d9cea33400e320d972c0812e99ad134ea2cc2bf0e932f6d507d93709f"
+    },
+    {
+      "path": "assets/images/professor-brandon-wiygul-ijj-large.webp",
+      "width": 1600,
+      "height": 1455,
+      "bytes": 154858,
+      "sha256": "10563cb442a35d9ea793e807ab2c1d99e5a8d344ff1e7830c4123e1e5855ba47"
+    }
+  ],
+  "coach-micah-island-jiu-jitsu": [
+    {
+      "path": "assets/images/coach-micah-island-jiu-jitsu-small.webp",
+      "width": 480,
+      "height": 606,
+      "bytes": 22868,
+      "sha256": "5356bf9e95bafeaed5a356cba091e883bd311b542922c2a1465ecbd70536fd6c"
+    },
+    {
+      "path": "assets/images/coach-micah-island-jiu-jitsu-medium.webp",
+      "width": 960,
+      "height": 1213,
+      "bytes": 110220,
+      "sha256": "5bc4a888ec4eaadf3159c3a696eb54899e58bbfd52695acc1a9c5d93a2e2541f"
+    },
+    {
+      "path": "assets/images/coach-micah-island-jiu-jitsu-large.webp",
+      "width": 1600,
+      "height": 2021,
+      "bytes": 236474,
+      "sha256": "e317d064e3a16cbe3cf47626b11e664ed4ebf023873dc1d403dfaea8786e45a8"
+    }
+  ],
+  "island-jiu-jitsu-lineage-leadership": [
+    {
+      "path": "assets/images/island-jiu-jitsu-lineage-leadership-small.webp",
+      "width": 480,
+      "height": 373,
+      "bytes": 35594,
+      "sha256": "3dbdcb4f7fcc509b429079be00dce08c517f65bd47aac6360f87d1e478629b73"
+    },
+    {
+      "path": "assets/images/island-jiu-jitsu-lineage-leadership-medium.webp",
+      "width": 960,
+      "height": 745,
+      "bytes": 100496,
+      "sha256": "7189ca54db4f7fd4ed60deba71205cf780c8df45dcf1cbcede4c90c15ac23d64"
+    },
+    {
+      "path": "assets/images/island-jiu-jitsu-lineage-leadership-large.webp",
+      "width": 1600,
+      "height": 1242,
+      "bytes": 206632,
+      "sha256": "8940046d763c30568d31d184ddf222cecbdb8e21cc4822efab7e0af2486f1848"
+    }
+  ],
+  "island-jiu-jitsu-arlington-community": [
+    {
+      "path": "assets/images/island-jiu-jitsu-arlington-community-small.webp",
+      "width": 480,
+      "height": 263,
+      "bytes": 29258,
+      "sha256": "b6ad3d266e6555258adbe4fb2096cbdabef04b10926e7c6f925e75fe61e11a85"
+    },
+    {
+      "path": "assets/images/island-jiu-jitsu-arlington-community-medium.webp",
+      "width": 960,
+      "height": 527,
+      "bytes": 88344,
+      "sha256": "3871617c59c00dcba9b3084e797f16527382b4c15fbdcca4922df2988198e3f9"
+    },
+    {
+      "path": "assets/images/island-jiu-jitsu-arlington-community-large.webp",
+      "width": 1600,
+      "height": 878,
+      "bytes": 207378,
+      "sha256": "618fc61548628cde9e10f5099f4a93dd8d6c7652bc6b4169a575aa76be470b45"
+    }
+  ]
+}

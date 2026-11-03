@@ -84,7 +84,7 @@ def build():
                      f'<strong>{escape(photo["caption"])}</strong></div></a>')
     preview_html = '<div class="gallery-preview">' + ''.join(cards) + '</div>'
     preview_html += ('<div class="gallery-preview-actions"><p>See everyday training, the academy community, '
-                     'and competition moments. Competition is optional—there is more than one reason to train.</p>'
+                     'and competition moments. Competition is optional. There is more than one reason to train.</p>'
                      '<a class="button" href="gallery.html">View gallery →</a></div>')
     for old in community.select('.community-grid,.gallery-preview,.gallery-preview-actions'):
         old.decompose()
@@ -149,7 +149,7 @@ def build():
     sections = []
     for category, photos in groups.items():
         copy = ('Coaching, partner practice, and the people who make the academy a community.' if category == 'gym' else
-                'Team outings, competition rounds, and moments worth celebrating. Competing is a choice—not a requirement to train.')
+                'Team outings, competition rounds, and moments worth celebrating. Competing is a choice, not a requirement to train.')
         photo_cards = []
         for index, photo in enumerate(photos):
             photo_cards.append(f'<figure class="gallery-photo" data-photo-id="{photo["id"]}">'

@@ -2,7 +2,7 @@
 
 Static marketing website for Island Jiu-Jitsu Washington.
 
-## Current public site
+## GitHub Pages copy
 
 <https://kenei631-cmd.github.io/island-jiu-jitsu-washington/>
 
@@ -24,22 +24,23 @@ Netlify local state (`.netlify/`) and build output (`netlify-dist/`) are ignored
 
 ## Pages
 
-- `index.html` — homepage
-- `programs.html` — adult, kids, and women-only programs
-- `schedule.html` — current class schedule and membership pricing
-- `contact.html` — address, maps, registration, and offer inquiry form
-- `faq.html` — academy FAQ
-- `smokey-point.html` — Smokey Point landing page
-- `lakewood-north-marysville.html` — Lakewood and North Marysville landing page
-- `thank-you.html` — form confirmation, noindex
-- `404.html` — custom not-found page
+- `index.html`: homepage
+- `about.html`: Professor Brandon’s history, family, academy principles, Coach Micah and four original-source academy photos
+- `programs.html`: adult, kids, and women-only programs
+- `schedule.html`: current class schedule and membership pricing
+- `contact.html`: address, maps, registration, and offer inquiry form
+- `faq.html`: academy FAQ
+- `smokey-point.html`: Smokey Point landing page
+- `lakewood-north-marysville.html`: Lakewood and North Marysville landing page
+- `thank-you.html`: form confirmation, noindex
+- `404.html`: custom not-found page
 
 ## SEO files
 
 - `robots.txt` and `sitemap.xml`
 - canonical, Open Graph, Twitter Card, and LocalBusiness structured data on public pages
 
-Canonical and sitemap URLs remain on GitHub Pages until the approved custom-domain launch. Before launch, update the canonical origin, social/structured-data URLs and sitemap/robots consistently; remove the staging noindex header in `scripts/build_netlify.py`; and verify HTTPS, form routing, pages and a real 404. No domain or DNS changes are made by this setup.
+Source canonical and sitemap URLs use GitHub Pages. The Netlify build rewrites these and local image/social/schema URLs to the actual Netlify deployment origin while retaining the pre-launch noindex header. Before launch, update the canonical origin, social/structured-data URLs and sitemap/robots consistently; remove the staging noindex header in `scripts/build_netlify.py`; and verify HTTPS, form routing, pages and a real 404. No domain or DNS changes are made by this setup.
 
 ## Local preview and staging build
 
@@ -78,3 +79,9 @@ python3 scripts/build_netlify.py
 Future collections should have their own folder and be merged into the catalog rather than overwriting this collection. Photo optimization is performed once locally; Netlify builds only copy the committed optimized files, so deployment does not require the original ZIP or Pillow.
 
 Image-display choices follow [web.dev responsive-image guidance](https://web.dev/learn/design/responsive-images) for full-frame `object-fit: contain`, real dimensions and responsive width descriptors, and [browser lazy-loading guidance](https://web.dev/articles/browser-level-image-lazy-loading) for deferred offscreen thumbnails and reserved image space.
+
+## About page
+
+`python3 scripts/build_about.py` renders the page using `docs/about-content.json` and `docs/about-photo-variants.json`. Biography sources are recorded in `docs/brandon-about-sources.md`. The four original photographs from the academy’s existing About page have three metadata-free WebP variants each in `assets/images/`; original proportions are preserved, with no AI editing or cropping. `assets/about.css` contains the page-specific layout. The generator also keeps the About navigation/footer links and sitemap entry synchronized.
+
+The Netlify site is being updated through the existing API connection. The latest source is saved locally; GitHub synchronization remains blocked by the previously confirmed expired/invalid authentication. No domain or DNS change has been made.

@@ -1,0 +1,40 @@
+.about-intro{padding:66px 0 76px;background:#0c1419;color:#fff}
+.about-intro-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center;gap:56px}
+.about-intro h1{font-size:clamp(3.3rem,5.1vw,5.7rem);line-height:1.01;margin:18px 0 24px;max-width:720px}
+.about-intro .about-lead{max-width:620px;color:#d1dadd;font-size:1.12rem;line-height:1.8}
+.about-role{color:var(--sea);font-weight:800;letter-spacing:.11em;text-transform:uppercase;font-size:.78rem}
+.about-intro .buttons{margin-top:28px}
+.about-portrait{margin:0;min-width:0}
+.about-portrait img{display:block;width:100%;height:auto;object-fit:cover;border:1px solid #3e525a}
+.about-portrait figcaption{font-size:.8rem;color:#b5c5ca;line-height:1.6;padding-top:12px}
+.about-breadcrumb{margin:0 0 28px;font-size:.8rem;color:#b9c7cc}
+.about-breadcrumb a{text-decoration:underline;text-underline-offset:3px}
+.about-breadcrumb span{margin:0 10px;color:var(--sea)}
+.about-overview{display:flex;gap:16px 28px;flex-wrap:wrap;padding:23px 0;border-bottom:1px solid var(--line)}
+.about-overview p{margin:0;font-size:.88rem;color:var(--muted)}
+.about-overview strong{display:block;color:var(--text);font-size:1rem}
+.about-story-heading{max-width:820px;margin-bottom:36px}
+.about-story-heading h2,.about-story-copy h2{font-size:clamp(2.3rem,4vw,3.8rem);line-height:1.08;margin:12px 0 22px}
+.about-journey{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;counter-reset:journey}
+.about-stage{border-top:3px solid var(--sea);padding-top:22px;counter-increment:journey}
+.about-stage::before{content:"0" counter(journey);font-size:.8rem;font-weight:800;color:#347b86;letter-spacing:.12em}
+.about-stage h3{font-size:1.7rem;line-height:1.15;margin:14px 0}
+.about-stage p,.about-story-copy p,.about-value p{font-size:1rem;line-height:1.8;color:#4e626b;margin:0 0 18px}
+.about-story-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:start}
+.about-family{border-left:3px solid var(--sea);padding-left:28px}
+.about-family h3{font-size:2rem;line-height:1.15;margin:12px 0 20px}
+.about-values{background:#132128;color:#fff}
+.about-values .about-story-heading p{max-width:720px;color:#c3d1d5}
+.about-value-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.about-value{border-top:1px solid #3c565f;padding-top:24px}
+.about-value h3{font-size:2.1rem;line-height:1.15;color:#fff;margin:0 0 16px}
+.about-value p{color:#d0dcdf}
+.about-more{margin-top:28px;color:#c3d1d5}
+.about-more a{color:#fff;text-decoration:underline;text-decoration-color:var(--sea);text-underline-offset:5px}
+@media(max-width:1050px){.about-intro-grid{gap:32px}.about-story-layout{gap:36px}.about-intro h1{font-size:clamp(3rem,6.5vw,4.7rem)}}
+@media(max-width:760px){.about-intro{padding:36px 0 48px}.about-intro-grid,.about-journey,.about-story-layout,.about-value-grid{grid-template-columns:1fr}.about-intro-grid{gap:34px}.about-intro h1{font-size:clamp(2.8rem,11vw,4.5rem)}.about-intro .about-lead{font-size:1rem}.about-journey,.about-value-grid{gap:22px}.about-family{padding-left:20px}.about-overview{gap:14px 24px}.about-overview p{flex:1 1 160px}.about-breadcrumb{font-size:.74rem}}
+
+.about-lineage{max-width:1000px;margin:42px auto 0}
+.section .about-portrait figcaption{color:#4e626b}
+.about-micah-grid{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);align-items:center;gap:70px}
+@media(max-width:760px){.about-micah-grid{grid-template-columns:1fr;gap:30px}.about-micah-grid .about-portrait{max-width:420px;width:100%;margin:0 auto}.about-lineage{margin-top:30px}}
