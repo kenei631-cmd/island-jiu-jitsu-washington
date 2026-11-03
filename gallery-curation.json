@@ -119,6 +119,66 @@
       ],
       "source_name": "IMG_5695-1.jpeg",
       "reason": "Distinct close partner-practice view with clear foreground faces and hands, colorful gis and relaxed expressions, rather than an intimidating competition scene. Native 4:3 framing keeps the complete foreground pair visible. This single catalog record lists IMG_5695-1.jpeg and IMG_5695.jpeg as duplicate source files; select its ID once only. Do not infer a named technique, beginner status or coaching roles."
+    },
+    {
+      "id": "ww-4b18b768f7e7",
+      "caption": "Partner practice on the academy mats.",
+      "alt": "Practitioners in white gis work through a ground position on blue mats, with younger students practicing in black and blue gis nearby.",
+      "focal_x": 50,
+      "focal_y": 76,
+      "roi": [
+        0.05,
+        0.2,
+        0.915,
+        0.81
+      ],
+      "source_name": "IMG_4730.JPG",
+      "reason": "Adds readable partner practice rather than a posed group: the white-gi pair's faces, gripping hands and connected leg position are visible, with other pairs practicing nearby. It is a mixed-age academy scene, not verified adult-only training; the caption deliberately avoids certifying either partner's age or class. Original large WebP inspected natively; no prominent photographer watermark observed. Visually distinct from all existing selected scenes. Every variant is square, so 4:3 cover at 50% 76% exposes normalized window [0, 0.19, 1, 0.94], containing the conservative ROI. A temporary crop proof confirmed retention of every original-visible face, hand and technical contact point, including the foreground young pair and background participants. No photo files in the repository were changed."
+    },
+    {
+      "id": "ww-2d766db498a1",
+      "caption": "Hands-on guidance during standing practice.",
+      "alt": "An adult in a black gi holds a white belt beside two young students in blue and pink gis working together in a standing position.",
+      "focal_x": 50,
+      "focal_y": 36,
+      "roi": [
+        0.0,
+        0.09,
+        0.65,
+        0.84
+      ],
+      "source_name": "IMG_4748.JPG",
+      "reason": "A close, comprehensible academy teaching moment: an adult actively assists beside the young pair, with the held belt, their contact and standing foot positions readable. This is distinct from the existing adult standing demonstration and ground lesson, and from the other shortlisted partner-practice scene. Describe young students accurately; do not infer the adult's identity, title, a named technique or a verified class. Original large WebP inspected natively; no prominent photographer watermark observed. Every variant is square, so 4:3 cover at 50% 36% exposes normalized window [0, 0.09, 1, 0.84], containing the conservative ROI. A temporary crop proof confirmed all original-visible heads, faces, hands, belt contact and feet remain, with a small but intact margin above the adult's head and below the feet. Preserve these exact focal percentages; do not use a centered crop or additional enlargement. No photo files in the repository were changed."
+    },
+    {
+      "id": "ww-a728202c4424",
+      "caption": "A shared moment during partner practice.",
+      "alt": "Two young practitioners in black gis practice together on gray academy mats, with a smile visible on the practitioner lying down and other pairs nearby.",
+      "focal_x": 50,
+      "focal_y": 50,
+      "roi": [
+        0.0,
+        0.005,
+        1.0,
+        0.95
+      ],
+      "source_name": "IMG_5690-1.jpeg",
+      "reason": "Natively inspected the 1920 \u00d7 1440 large WebP. A natural, relaxed partner interaction rather than a posed group, competition scene, or square instructor demonstration. The foreground black-gi pair is distinct from the already selected yellow-and-green-gi pair in IMG_5695. Faces, posted hand, other visible hands, and partner contact are readable. Every variant is exactly 4:3 (320 \u00d7 240, 960 \u00d7 720, 1920 \u00d7 1440), so a strict 4:3 cover frame retains the full normalized source [0,0,1,1], including background faces and source-edge partial people; the conservative ROI is wholly inside it. No prominent overlay watermark observed. IMG_5690.jpeg is another source filename within this same catalog record, not a second addition. This youth scene is not evidence of an adult women's or beginner class."
+    },
+    {
+      "id": "ww-ef5c0c9aa793",
+      "caption": "A conversation beside the mats.",
+      "alt": "Two smiling people in casual clothes sit in folding chairs beside the academy mats.",
+      "focal_x": 50,
+      "focal_y": 100,
+      "roi": [
+        0.0,
+        0.44,
+        1.0,
+        1.0
+      ],
+      "source_name": "IMG_5612.jpeg",
+      "reason": "Natively inspected the 1440 \u00d7 1920 large WebP. Adds a candid, welcoming social interaction beside the mat rather than another posed team or technical ground scene. Do not infer that the seated people are parents, instructors, or training participants. At 50% 100%, strict 4:3 cover keeps source pixels x=0\u20131440 and y=840\u20131920: normalized window [0,0.4375,1,1]. The conservative ROI [0,0.44,1,1] is contained, preserving both seated faces, source-visible hands, and the already partial child's face and hands at the bottom. The top margin above the ROI is only 4.8 large-image pixels: bottom alignment is mandatory, with no extra zoom, inset crop, square thumbnail, or center positioning. Thumbnail and medium variants have the identical 3:4 aspect, so the normalized crop is unchanged. The source is somewhat soft and cluttered but the interaction remains legible. No prominent overlay watermark observed. Exclude visually identical IMG_5612 2.jpeg (ww-630fc1f294bc), whose large variant has the same SHA-256."
     }
   ],
   "competition": [

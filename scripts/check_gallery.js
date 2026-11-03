@@ -4,6 +4,7 @@
   const selected = Object.fromEntries(Object.values(curation).flat().map(photo => [photo.id, photo]));
   const failures = [], results = [];
   const check = (condition, detail) => { if (!condition) failures.push(detail); };
+  const options = window.galleryCheckOptions || {};
   function cropCheck(win, image, page, width) {
     const style = win.getComputedStyle(image), box = image.getBoundingClientRect();
     const scale = Math.max(box.width / image.naturalWidth, box.height / image.naturalHeight);
@@ -21,7 +22,7 @@
     return box;
   }
   for (const width of [1280, 768, 390, 320]) {
-    for (const page of ['gallery.html', 'index.html']) {
+    for (const page of options.pages || ['gallery.html', 'index.html']) {
       const frame = document.createElement('iframe');
       frame.style.cssText = `position:absolute;left:-10000px;top:0;width:${width}px;height:844px;border:0`;
       document.body.append(frame);
@@ -33,7 +34,7 @@
           {page,viewport:width,issue:'Default category must be gym'});
         check(win.getComputedStyle(doc.querySelector('.gallery-filter.selected')).backgroundColor !== 'rgba(0, 0, 0, 0)',
           {page,viewport:width,issue:'Selected filter needs a visible dark background'});
-        for (const category of ['gym', 'competition']) {
+        for (const category of options.categories || ['gym', 'competition']) {
           doc.querySelector(`[data-gallery-filter="${category}"]`).click();
           const section = doc.querySelector(`[data-gallery-section="${category}"]`);
           check(!section.hidden && doc.querySelector(`[data-gallery-filter="${category}"]`).getAttribute('aria-pressed') === 'true',
@@ -47,7 +48,10 @@
             {page,viewport:width,issue:'Gallery thumbnail frames differ'});
           checkedPhotos += images.length;
         }
-        const first = doc.querySelector('[data-gallery-section="competition"] .gallery-open');
+        const viewerCategory = options.viewerCategory || 'competition';
+        doc.querySelector(`[data-gallery-filter="${viewerCategory}"]`).click();
+        const viewerLinks = [...doc.querySelectorAll(`[data-gallery-section="${viewerCategory}"] .gallery-open`)];
+        const first = viewerLinks[0];
         const dialog = doc.getElementById('gallery-viewer');
         first.click();
         const image = doc.getElementById('gallery-viewer-image');
@@ -65,7 +69,7 @@
         check(doc.getElementById('gallery-viewer-title').textContent === firstCaption,
           {page,viewport:width,issue:'Keyboard previous did not return'});
         doc.querySelector('[data-gallery-previous]').click(); await image.decode();
-        check(doc.getElementById('gallery-viewer-counter').textContent.startsWith('8 of 8'),
+        check(doc.getElementById('gallery-viewer-counter').textContent.startsWith(`${viewerLinks.length} of ${viewerLinks.length}`),
           {page,viewport:width,issue:'Previous wrap-around failed'});
         const closed = new Promise(resolve => dialog.addEventListener('close', resolve, {once:true}));
         doc.querySelector('[data-gallery-close]').click();
