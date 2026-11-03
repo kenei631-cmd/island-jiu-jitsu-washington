@@ -1,8 +1,8 @@
 """Build a static Netlify copy with trailing-slash routes and legacy 301s.
 
 Source pages stay flat for GitHub Pages. Netlify publishes folder/index.html
-pages, root-absolute resources and explicit legacy redirects. The pre-launch
-noindex header remains until the user authorizes its removal separately.
+pages, root-absolute resources and explicit legacy redirects. Production
+marketing pages are indexable; published utility pages remain noindex.
 """
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
@@ -20,6 +20,7 @@ OUTPUT = ROOT / 'netlify-dist'
 SOURCE_ORIGIN = 'https://kenei631-cmd.github.io/island-jiu-jitsu-washington'
 ASSET_ORIGIN = 'https://island-jiu-jitsu-washington.netlify.app'
 SITE_ORIGIN = os.environ.get('SITE_ORIGIN', 'https://www.islandjiujitsuwa.com').rstrip('/')
+INDEXABLE = os.environ.get('INDEXABLE', 'true').lower() not in {'false', '0', 'no'}
 if not SITE_ORIGIN.startswith('https://') or urlsplit(SITE_ORIGIN).path:
     raise SystemExit('SITE_ORIGIN must be an explicitly configured HTTPS origin')
 
@@ -111,6 +112,8 @@ for filename, route in ROUTES.items():
 (OUTPUT / '404.html').write_text(convert_html('404.html'), encoding='utf-8')
 
 shutil.copytree(ROOT / 'assets', OUTPUT / 'assets')
+if (ROOT / 'favicon.ico').is_file():
+    shutil.copy2(ROOT / 'favicon.ico', OUTPUT / 'favicon.ico')
 # Relative JS-generated thumbnail, preview and catalog URLs must still start at the site root.
 library_script = OUTPUT / 'assets/photo-library.js'
 code = library_script.read_text()
@@ -166,22 +169,33 @@ redirect('/blog/index.html', '/gallery/', 'Protective directory-index alias for 
 # The directory/index.html output gives native one-hop slash normalization for bare routes.
 redirect_text = '# Legacy and HTML-alias redirects. Canonical destinations end in a slash.\n'
 redirect_text += '# Bare named routes use Netlify directory normalization; no looping slash rules.\n'
+# Consolidate published Netlify page copies, but preserve stable 200 asset URLs.
+# Host-qualified rules precede path aliases to avoid an extra host/page hop.
+host_paths = {route: route for route in ROUTES.values()}
+host_paths.update({row['source_path']: row['destination_path'] for row in rows})
+for source, target in sorted(host_paths.items()):
+    redirect_text += f'{ASSET_ORIGIN}{source} {SITE_ORIGIN}{target} 301!\n'
 redirect_text += '\n'.join(f"{row['source_path']} {row['destination_path']} 301!" for row in rows) + '\n'
 (OUTPUT / '_redirects').write_text(redirect_text)
 (ROOT / 'redirects-generated.txt').write_text(redirect_text)
 (ROOT / 'output').mkdir(exist_ok=True)
 with (ROOT / 'output/Island-Jiu-Jitsu-301-Redirect-Inventory.csv').open('w', newline='') as handle:
-    writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+    writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator='\n')
     writer.writeheader()
     writer.writerows(rows)
 
 (OUTPUT / '_headers').write_text(
-    '/*\n  X-Robots-Tag: noindex, nofollow\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n'
+    '/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n' +
+    ('' if INDEXABLE else '  X-Robots-Tag: noindex, nofollow\n') +
+    ''.join(f'{path}\n  X-Robots-Tag: noindex, follow\n' for path in [
+        '/photo-library', '/photo-library/*', '/thank-you', '/thank-you/*', '/404.html'
+    ]) +
     '/assets/photos/william-wallace/*\n  Cache-Control: public, max-age=31536000, immutable\n' +
+    '/assets/fonts/*\n  Cache-Control: public, max-age=31536000, immutable\n' +
     ''.join(f'{path}\n  Cache-Control: public, max-age=0, must-revalidate\n' for path in [
         '/assets/site.css', '/assets/photos/library.json', '/assets/photos/library.csv', '/assets/photo-library.css',
         '/assets/photo-library.js', '/assets/gallery.css', '/assets/gallery.js', '/assets/about.css'
     ]), encoding='utf-8')
 print(f'Netlify directory build: {len(ROUTES)} content pages plus real 404; {len(rows)} explicit 301 rules.')
 print(f'Canonical origin: {SITE_ORIGIN}; offer confirmation: {SITE_ORIGIN}/thank-you/')
-print('All existing photo assets preserved. Pre-launch noindex remains enabled; no DNS or form-processor changes.')
+print(f'All photo assets preserved. Marketing indexable: {INDEXABLE}; utilities noindex; no DNS or form-processor changes.')

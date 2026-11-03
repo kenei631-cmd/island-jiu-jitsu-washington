@@ -22,7 +22,7 @@ for attempt in range(1, 31):
         canonical = requests.get(BASE + '/gallery/', allow_redirects=False, timeout=20)
         markup = BeautifulSoup(canonical.text, 'html.parser')
         canonical_link = markup.select_one('link[rel="canonical"]')
-        if canonical.status_code == 200 and canonical_link and canonical_link['href'] == BASE + '/gallery/':
+        if canonical.status_code == 200 and canonical_link and canonical_link['href'] == BASE + '/gallery/' and 'noindex' not in canonical.headers.get('X-Robots-Tag', ''):
             break
     print(f'Waiting for redirect deployment: attempt {attempt}/30', flush=True)
     time.sleep(6)
@@ -45,7 +45,7 @@ def test_row(row):
 with ThreadPoolExecutor(max_workers=4) as pool:
     results = list(pool.map(test_row, rows))
 with INVENTORY.open('w', newline='') as handle:
-    writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+    writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator='\n')
     writer.writeheader()
     writer.writerows(row for row, _ in results)
 failures = [row for row, status in results if status == 'FAIL']
@@ -60,7 +60,8 @@ for path in routes:
     assert response.status_code == 200, (path, response.status_code, response.headers.get('Location'))
     soup = BeautifulSoup(response.text, 'html.parser')
     assert soup.select_one('link[rel="canonical"]')['href'] == BASE + path, path
-    assert 'noindex' in response.headers.get('X-Robots-Tag', ''), path
+    utility = path in {'/photo-library/', '/thank-you/'}
+    assert ('noindex' in response.headers.get('X-Robots-Tag', '')) == utility, path
     if path != '/':
         bare = requests.get(BASE + path.rstrip('/'), allow_redirects=True, timeout=25)
         assert len(bare.history) == 1 and bare.history[0].status_code == 301 and bare.url == BASE + path and bare.status_code == 200, path
@@ -115,7 +116,7 @@ for source_row in rows[:5]:
     row['verified_redirect_hops'] = len(response.history)
     apex_rows.append(row)
 with INVENTORY.open('w', newline='') as handle:
-    writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+    writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator='\n')
     writer.writeheader()
     writer.writerows(rows + apex_rows)
 sitemap = requests.get(BASE + '/sitemap.xml', timeout=25)
@@ -124,4 +125,4 @@ assert BASE + '/about/' in sitemap.text and BASE + '/gallery/' in sitemap.text
 assert 'github.io' not in sitemap.text and '.html</' not in sitemap.text
 print('PASS: query strings retained, unknown pages/assets return real 404s, form/gallery unchanged, library and scripts load, sample image bytes match, sitemap uses custom-domain slash routes.', flush=True)
 print('PASS: five original non-www URLs also resolve correctly; Netlify existing host normalization adds a second 301 where needed. Inventory reports actual hop counts.', flush=True)
-print('NOTICE: pre-launch noindex is intentionally preserved, and FormSubmit delivery remains unverified. No DNS changes made.', flush=True)
+print('NOTICE: marketing indexing block removed; utilities remain excluded. FormSubmit delivery remains unverified. No DNS changes made.', flush=True)

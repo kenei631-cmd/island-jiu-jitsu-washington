@@ -6,17 +6,17 @@ Static marketing website for Island Jiu-Jitsu Washington.
 
 <https://kenei631-cmd.github.io/island-jiu-jitsu-washington/>
 
-## Netlify pre-launch staging
+## Netlify production
 
 Project: `island-jiu-jitsu-washington` in the FANNIT team.
 
-Staging URL: <https://island-jiu-jitsu-washington.netlify.app/>
+Primary URL: <https://www.islandjiujitsuwa.com/>. The Netlify.app page-copy URLs redirect to this host; existing direct Netlify photo asset URLs remain available.
 
 Dashboard: <https://app.netlify.com/projects/island-jiu-jitsu-washington>
 
 Netlify project ID: `7715e103-044b-4953-b640-aafbccd10f02`.
 
-The current Netlify primary domain is <https://www.islandjiujitsuwa.com/>. `netlify.toml` installs `requirements.txt` and runs `python3 scripts/build_netlify.py` with publish directory `netlify-dist`. Source HTML remains flat for GitHub Pages; Netlify generates `route/index.html` pages with trailing-slash canonical URLs, root-absolute resources and explicit legacy 301 rules. The build retains `X-Robots-Tag: noindex, nofollow` as a separate pre-launch indexing gate and sends offer-form confirmations to `/thank-you/` on the primary host. No DNS or Netlify domain setting is changed by this build.
+The current Netlify primary domain is <https://www.islandjiujitsuwa.com/>. `netlify.toml` installs `requirements.txt` and runs `python3 scripts/build_netlify.py` with publish directory `netlify-dist`. Source HTML remains flat for GitHub Pages; Netlify generates `route/index.html` pages with trailing-slash canonical URLs, root-absolute resources and explicit legacy 301 rules. Production marketing pages are indexable. Only non-production builds use the global `X-Robots-Tag: noindex, nofollow` gate; the public asset library, confirmation and error content retain their individual exclusions. Offer-form confirmations point to `/thank-you/` on the primary host. No DNS or Netlify domain setting is changed by this build.
 
 The initial Netlify deployment uses the Netlify connector. Automatic GitHub-to-Netlify deployment is not yet configured: the connector's exposed project operations do not provide repository linking. When linking the existing repository in Netlify, use `kenei631-cmd/island-jiu-jitsu-washington`, production branch `main`, and the committed build settings. Do not create or clone a second GitHub repository.
 
@@ -40,7 +40,11 @@ Netlify local state (`.netlify/`) and build output (`netlify-dist/`) are ignored
 - `robots.txt` and `sitemap.xml`
 - canonical, Open Graph, Twitter Card, and LocalBusiness structured data on public pages
 
-Source canonical and sitemap URLs use GitHub Pages. The Netlify build rewrites metadata and sitemap URLs to the existing primary custom domain and canonical slash paths. `SITE_ORIGIN` can override the configured canonical origin explicitly. Pre-launch noindex remains: before SEO launch, remove that header with authorization and recheck indexing/HTTPS/form delivery. Keep the photo library and thank-you page individually noindex. The form still uses FormSubmit; its delivery test remains unconfirmed.
+Source canonical and sitemap URLs use GitHub Pages. The Netlify build rewrites metadata and sitemap URLs to the existing primary custom domain and canonical slash paths. `SITE_ORIGIN` can override the configured canonical origin explicitly. Production marketing pages are indexable; the photo library, thank-you page and error page remain individually noindex. `INDEXABLE=false` enables a global indexing block for non-production builds, and deploy-preview/branch-deploy contexts set it explicitly. Published Netlify.app page copies redirect to the primary custom domain, while stable Netlify photo asset URLs remain available. The form still uses FormSubmit; its inbox-delivery test remains unconfirmed.
+
+The November 2026 technical SEO update externalizes all nine original WOFF2 font faces into exact-byte hashed assets with long-lived caching. The shared stylesheet retains all route and responsive rules; no photos or typography were substituted. Needed body/headline fonts are preloaded, the header logo loads eagerly into a reserved box, and the existing stacked weekly schedule no longer inherits a desktop minimum width on phones.
+
+Square opaque favicon PNGs at 180, 192 and 512 pixels and the legacy `favicon.ico` are derived only from the supplied academy logo. `scripts/build_favicons.py` regenerates them without creating new artwork or cropping the original mark. All source pages reference the 192-pixel favicon and the 180-pixel Apple touch icon; the manifest uses the 192- and 512-pixel icons. Keep their public URLs stable.
 
 ## Local preview and staging build
 
@@ -85,7 +89,7 @@ Image-display choices follow [web.dev responsive-image guidance](https://web.dev
 
 `python3 scripts/build_about.py` renders the page using `docs/about-content.json` and `docs/about-photo-variants.json`. Biography sources are recorded in `docs/brandon-about-sources.md`. The four original photographs from the academy’s existing About page have three metadata-free WebP variants each in `assets/images/`; original proportions are preserved, with no AI editing or cropping. `assets/about.css` contains the page-specific layout. The generator also keeps the About navigation/footer links and sitemap entry synchronized.
 
-The Netlify site is being updated through the existing API connection. The latest source is saved locally; GitHub synchronization remains blocked by the previously confirmed expired/invalid authentication. No domain or DNS change has been made.
+The Netlify site is being updated through the existing API connection. Source synchronization is separate from publishing: ensure the latest source is pushed before enabling repository-triggered Netlify builds. Review the historical GitHub Pages mirror's indexing policy when consolidating hosting. No domain or DNS change has been made by these source updates.
 
 ## Legacy 301 redirects
 

@@ -1,125 +1,121 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Photo Library | Island Jiu-Jitsu Washington</title>
-  <meta name="description" content="Browse the Island Jiu-Jitsu Washington photo inventory, inspect full-frame WebP variants, and copy stable image URLs for publishing."/>
-  <meta name="robots" content="noindex,nofollow"/>
-  <meta name="theme-color" content="#0c1419"/>
-  <link rel="stylesheet" href="assets/site.css?v=20261102-about"/>
-  <link rel="stylesheet" href="assets/photo-library.css"/>
-  <link rel="icon" type="image/png" href="assets/images/island-jiu-jitsu-washington-logo.png"/>
-  <link rel="canonical" href="https://island-jiu-jitsu-washington.netlify.app/photo-library.html"/>
-  <script src="assets/photo-library.js" defer></script>
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Photo Library | Island Jiu-Jitsu Washington</title>
+<meta content="Browse the Island Jiu-Jitsu Washington photo inventory, inspect full-frame WebP variants, and copy stable image URLs for publishing." name="description"/>
+<meta content="noindex,nofollow" name="robots"/>
+<meta content="#0c1419" name="theme-color"/>
+<link href="assets/site.css?v=20261103-seo" rel="stylesheet"/>
+<link href="assets/photo-library.css" rel="stylesheet"/>
+<link href="assets/icons/favicon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="https://island-jiu-jitsu-washington.netlify.app/photo-library.html" rel="canonical"/>
+<script defer="" src="assets/photo-library.js"></script>
+<link as="font" crossorigin="anonymous" href="assets/fonts/barlow-condensed-3787a5a419171630.woff2" rel="preload" type="font/woff2"/><link as="font" crossorigin="anonymous" href="assets/fonts/inter-8909904ab6c872eb.woff2" rel="preload" type="font/woff2"/><link href="assets/icons/favicon-180.png" rel="apple-touch-icon" sizes="180x180" type="image/png"/></head>
 <body class="photo-library-page">
-<header class="site-header"><div class="head-inner"><a aria-label="Island Jiu-Jitsu Washington home" class="brand" href="index.html"><img alt="Island Jiu-Jitsu Washington logo" decoding="async" height="392" loading="lazy" src="assets/images/island-jiu-jitsu-washington-logo.png" width="1127"/></a><button aria-expanded="false" aria-label="Toggle navigation" class="menu-toggle">☰ Menu</button><nav aria-label="Main navigation" class="nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="programs.html">Programs</a><a href="schedule.html">Schedule &amp; Pricing</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a class="button" href="https://island-jiu-jitsu-washington-llc.gymdesk.com/signup" rel="noopener noreferrer" target="_blank">Join / Register →</a></nav></div></header>
+<header class="site-header"><div class="head-inner"><a aria-label="Island Jiu-Jitsu Washington home" class="brand" href="index.html"><img alt="Island Jiu-Jitsu Washington logo" decoding="async" height="392" loading="eager" src="assets/images/island-jiu-jitsu-washington-logo.png" width="1127"/></a><button aria-expanded="false" aria-label="Toggle navigation" class="menu-toggle">☰ Menu</button><nav aria-label="Main navigation" class="nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="programs.html">Programs</a><a href="schedule.html">Schedule &amp; Pricing</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a class="button" href="https://island-jiu-jitsu-washington-llc.gymdesk.com/signup" rel="noopener noreferrer" target="_blank">Join / Register →</a></nav></div></header>
 <main class="pl-main" id="pl-main">
-  <section class="pl-intro" aria-labelledby="pl-title">
-    <div class="wrap">
-      <div class="pl-title-row">
-        <div>
-          <p class="pl-kicker">Island Jiu-Jitsu Washington / Asset catalog</p>
-          <h1 id="pl-title">Photo library</h1>
-          <p class="pl-intro-copy">Find an original filename, inspect the full photo, and choose a web-ready image size.</p>
-        </div>
-        <a class="pl-button pl-button-light" href="assets/photos/library.csv" download>Download inventory CSV ↓</a>
-      </div>
-      <p class="pl-format-note">Full-frame, not cropped. Every WebP variant preserves the entire composition; grid frames use letterboxing where needed.</p>
-    </div>
-  </section>
-
-  <div class="wrap pl-content">
-    <aside class="pl-permission-note" aria-label="Photo privacy and permission notice">
-      <strong>Public library, not private.</strong> This page and its image URLs are publicly reachable. <code>noindex</code> requests search exclusion; it is not access control. Verify permission before using photos featuring people, especially children.
+<section aria-labelledby="pl-title" class="pl-intro">
+<div class="wrap">
+<div class="pl-title-row">
+<div>
+<p class="pl-kicker">Island Jiu-Jitsu Washington / Asset catalog</p>
+<h1 id="pl-title">Photo library</h1>
+<p class="pl-intro-copy">Find an original filename, inspect the full photo, and choose a web-ready image size.</p>
+</div>
+<a class="pl-button pl-button-light" download="" href="assets/photos/library.csv">Download inventory CSV ↓</a>
+</div>
+<p class="pl-format-note">Full-frame, not cropped. Every WebP variant preserves the entire composition; grid frames use letterboxing where needed.</p>
+</div>
+</section>
+<div class="wrap pl-content">
+<aside aria-label="Photo privacy and permission notice" class="pl-permission-note">
+<strong>Public library, not private.</strong> This page and its image URLs are publicly reachable. <code>noindex</code> requests search exclusion; it is not access control. Verify permission before using photos featuring people, especially children.
     </aside>
-
-    <section class="pl-summary" aria-label="Photo inventory summary">
-      <dl class="pl-stats">
-        <div><dt>Source photos</dt><dd id="pl-source-count">Loading</dd></div>
-        <div><dt>Unique photos</dt><dd id="pl-unique-count">Loading</dd></div>
-        <div><dt>Duplicates removed</dt><dd id="pl-duplicate-count">Loading</dd></div>
-        <div><dt>Original photos</dt><dd id="pl-original-bytes">Loading</dd></div>
-        <div><dt>All WebP variants</dt><dd id="pl-optimized-bytes">Loading</dd></div>
-        <div><dt>Storage saved</dt><dd id="pl-savings">Loading</dd></div>
-      </dl>
-      <p class="pl-summary-note" id="pl-summary-note">Inventory totals will appear when the library loads.</p>
-    </section>
-
-    <section class="pl-browser" aria-labelledby="pl-browse-title">
-      <div class="pl-section-heading">
-        <h2 id="pl-browse-title">Browse photos</h2>
-        <span class="pl-page-size">24 per page · thumbnails only</span>
-      </div>
-      <form class="pl-controls" id="pl-filters" role="search" aria-label="Search the photo inventory">
-        <div class="pl-field pl-search-field">
-          <label for="pl-search">Search filenames or ID</label>
-          <input id="pl-search" type="search" placeholder="Original filename, name, or photo ID" autocomplete="off" aria-controls="pl-grid" disabled/>
-        </div>
-        <div class="pl-field">
-          <label for="pl-orientation">Orientation</label>
-          <select id="pl-orientation" aria-controls="pl-grid" disabled>
-            <option value="all">All orientations</option>
-            <option value="landscape">Landscape</option>
-            <option value="portrait">Portrait</option>
-            <option value="square">Square</option>
-          </select>
-        </div>
-        <button class="pl-button pl-button-secondary" id="pl-clear" type="button" disabled>Clear filters</button>
-      </form>
-      <p class="pl-results" id="pl-results" role="status" aria-live="polite" aria-atomic="true">Loading photo inventory…</p>
-      <div class="pl-error" id="pl-error" role="alert" hidden>
-        <p id="pl-error-message"></p>
-        <button class="pl-button" id="pl-retry" type="button">Try again</button>
-      </div>
-      <noscript><p class="pl-permission-note">JavaScript is required to search and preview the library. You can still <a href="assets/photos/library.csv">download the inventory CSV</a>.</p></noscript>
-      <ul class="pl-grid" id="pl-grid" aria-label="Photo results" aria-busy="true"></ul>
-      <div class="pl-empty" id="pl-empty" hidden>No photos match these filters. Try a different filename or clear the filters.</div>
-      <nav class="pl-pagination" aria-label="Photo result pages" id="pl-pagination" hidden>
-        <button class="pl-button pl-button-secondary" id="pl-previous" type="button">← Previous</button>
-        <span id="pl-page-label"></span>
-        <button class="pl-button pl-button-secondary" id="pl-next" type="button">Next →</button>
-      </nav>
-    </section>
-
-    <aside class="pl-publishing-note" aria-label="Using library images">
-      <h2>Using these assets</h2>
-      <p>Choose a photo to open the large preview and inspect its thumbnail, medium, and large WebP variants. Copy a direct URL or responsive HTML, then replace the generic alt-text placeholder with an accurate description before publishing.</p>
-      <p>Copied URLs always use the stable Netlify site address, including when browsing a local preview: <code>https://island-jiu-jitsu-washington.netlify.app/</code>. The images must be published there for these URLs to work.</p>
-    </aside>
-    <p class="pl-status" id="pl-copy-status" role="status" aria-live="polite" aria-atomic="true"></p>
-  </div>
+<section aria-label="Photo inventory summary" class="pl-summary">
+<dl class="pl-stats">
+<div><dt>Source photos</dt><dd id="pl-source-count">Loading</dd></div>
+<div><dt>Unique photos</dt><dd id="pl-unique-count">Loading</dd></div>
+<div><dt>Duplicates removed</dt><dd id="pl-duplicate-count">Loading</dd></div>
+<div><dt>Original photos</dt><dd id="pl-original-bytes">Loading</dd></div>
+<div><dt>All WebP variants</dt><dd id="pl-optimized-bytes">Loading</dd></div>
+<div><dt>Storage saved</dt><dd id="pl-savings">Loading</dd></div>
+</dl>
+<p class="pl-summary-note" id="pl-summary-note">Inventory totals will appear when the library loads.</p>
+</section>
+<section aria-labelledby="pl-browse-title" class="pl-browser">
+<div class="pl-section-heading">
+<h2 id="pl-browse-title">Browse photos</h2>
+<span class="pl-page-size">24 per page · thumbnails only</span>
+</div>
+<form aria-label="Search the photo inventory" class="pl-controls" id="pl-filters" role="search">
+<div class="pl-field pl-search-field">
+<label for="pl-search">Search filenames or ID</label>
+<input aria-controls="pl-grid" autocomplete="off" disabled="" id="pl-search" placeholder="Original filename, name, or photo ID" type="search"/>
+</div>
+<div class="pl-field">
+<label for="pl-orientation">Orientation</label>
+<select aria-controls="pl-grid" disabled="" id="pl-orientation">
+<option value="all">All orientations</option>
+<option value="landscape">Landscape</option>
+<option value="portrait">Portrait</option>
+<option value="square">Square</option>
+</select>
+</div>
+<button class="pl-button pl-button-secondary" disabled="" id="pl-clear" type="button">Clear filters</button>
+</form>
+<p aria-atomic="true" aria-live="polite" class="pl-results" id="pl-results" role="status">Loading photo inventory…</p>
+<div class="pl-error" hidden="" id="pl-error" role="alert">
+<p id="pl-error-message"></p>
+<button class="pl-button" id="pl-retry" type="button">Try again</button>
+</div>
+<noscript><p class="pl-permission-note">JavaScript is required to search and preview the library. You can still <a href="assets/photos/library.csv">download the inventory CSV</a>.</p></noscript>
+<ul aria-busy="true" aria-label="Photo results" class="pl-grid" id="pl-grid"></ul>
+<div class="pl-empty" hidden="" id="pl-empty">No photos match these filters. Try a different filename or clear the filters.</div>
+<nav aria-label="Photo result pages" class="pl-pagination" hidden="" id="pl-pagination">
+<button class="pl-button pl-button-secondary" id="pl-previous" type="button">← Previous</button>
+<span id="pl-page-label"></span>
+<button class="pl-button pl-button-secondary" id="pl-next" type="button">Next →</button>
+</nav>
+</section>
+<aside aria-label="Using library images" class="pl-publishing-note">
+<h2>Using these assets</h2>
+<p>Choose a photo to open the large preview and inspect its thumbnail, medium, and large WebP variants. Copy a direct URL or responsive HTML, then replace the generic alt-text placeholder with an accurate description before publishing.</p>
+<p>Copied URLs always use the stable Netlify site address, including when browsing a local preview: <code>https://island-jiu-jitsu-washington.netlify.app/</code>. The images must be published there for these URLs to work.</p>
+</aside>
+<p aria-atomic="true" aria-live="polite" class="pl-status" id="pl-copy-status" role="status"></p>
+</div>
 </main>
-
-<dialog class="pl-dialog" id="pl-dialog" aria-labelledby="pl-dialog-title" aria-describedby="pl-dialog-description">
-  <div class="pl-dialog-header">
-    <h2 id="pl-dialog-title"></h2>
-    <button class="pl-button pl-button-secondary pl-close" id="pl-dialog-close" type="button" autofocus aria-label="Close photo preview">Close ×</button>
-  </div>
-  <p class="pl-dialog-description" id="pl-dialog-description">Large WebP preview. Full composition shown without cropping. Press Escape to close.</p>
-  <div class="pl-preview-frame">
-    <img id="pl-preview-image" alt="" decoding="async"/>
-  </div>
-  <p class="pl-image-error" id="pl-image-error" role="status" hidden>The large preview could not load. Check that this photo has been published; the variant links remain available below.</p>
-  <div class="pl-dialog-details">
-    <dl class="pl-photo-meta" id="pl-photo-meta"></dl>
-    <div class="pl-originals">
-      <h3>Original filenames</h3>
-      <ul id="pl-original-names"></ul>
-    </div>
-  </div>
-  <section class="pl-variants" aria-labelledby="pl-variants-title">
-    <h3 id="pl-variants-title">WebP variants</h3>
-    <p class="pl-variant-note">Links open the canonical Netlify-hosted file in a new tab.</p>
-    <ul id="pl-variant-links"></ul>
-  </section>
-  <div class="pl-copy-actions">
-    <button class="pl-button" id="pl-copy-url" type="button">Copy Large URL</button>
-    <button class="pl-button pl-button-secondary" id="pl-copy-html" type="button">Copy responsive HTML</button>
-  </div>
-  <p class="pl-alt-note">Before publishing, replace <code>Describe this photo before publishing</code> with an accurate alt description and verify permission to use the photo.</p>
-  <p class="pl-status" id="pl-dialog-status" role="status" aria-live="polite" aria-atomic="true"></p>
+<dialog aria-describedby="pl-dialog-description" aria-labelledby="pl-dialog-title" class="pl-dialog" id="pl-dialog">
+<div class="pl-dialog-header">
+<h2 id="pl-dialog-title"></h2>
+<button aria-label="Close photo preview" autofocus="" class="pl-button pl-button-secondary pl-close" id="pl-dialog-close" type="button">Close ×</button>
+</div>
+<p class="pl-dialog-description" id="pl-dialog-description">Large WebP preview. Full composition shown without cropping. Press Escape to close.</p>
+<div class="pl-preview-frame">
+<img alt="" decoding="async" id="pl-preview-image"/>
+</div>
+<p class="pl-image-error" hidden="" id="pl-image-error" role="status">The large preview could not load. Check that this photo has been published; the variant links remain available below.</p>
+<div class="pl-dialog-details">
+<dl class="pl-photo-meta" id="pl-photo-meta"></dl>
+<div class="pl-originals">
+<h3>Original filenames</h3>
+<ul id="pl-original-names"></ul>
+</div>
+</div>
+<section aria-labelledby="pl-variants-title" class="pl-variants">
+<h3 id="pl-variants-title">WebP variants</h3>
+<p class="pl-variant-note">Links open the canonical Netlify-hosted file in a new tab.</p>
+<ul id="pl-variant-links"></ul>
+</section>
+<div class="pl-copy-actions">
+<button class="pl-button" id="pl-copy-url" type="button">Copy Large URL</button>
+<button class="pl-button pl-button-secondary" id="pl-copy-html" type="button">Copy responsive HTML</button>
+</div>
+<p class="pl-alt-note">Before publishing, replace <code>Describe this photo before publishing</code> with an accurate alt description and verify permission to use the photo.</p>
+<p aria-atomic="true" aria-live="polite" class="pl-status" id="pl-dialog-status" role="status"></p>
 </dialog>
 <footer class="footer"><div class="wrap"><div class="footer-inner"><div><img alt="Island Jiu-Jitsu Washington" class="footer-logo" decoding="async" height="392" loading="lazy" src="assets/images/island-jiu-jitsu-washington-logo.png" width="1127"/><p>Technique • Discipline • Community<br/>Technique first. Train with purpose.</p></div><div><p>3131 Smokey Point Dr, Ste 11B<br/>Arlington, WA 98223<br/><a href="tel:+12088610075">(208) 861-0075</a></p><strong>Explore</strong><br/><a href="about.html">About Professor Brandon</a><a href="programs.html">Programs</a><a href="schedule.html">Schedule &amp; Pricing</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a><a href="gallery.html">Gallery</a><a href="smokey-point.html">Smokey Point Jiu-Jitsu</a><a href="lakewood-north-marysville.html">Lakewood / North Marysville Jiu-Jitsu</a></div><div><strong>Member resources</strong><br/><a href="https://app.gymdesk.com/login" rel="noopener noreferrer" target="_blank">Gymdesk Login ↗</a><a href="https://smoothcomp.com/en/auth/login" rel="noopener noreferrer" target="_blank">Smoothcomp ↗</a><a href="https://www.breakpointfc.com/collections/island-jiu-jitsu-washington" rel="noopener noreferrer" target="_blank">Merchandise ↗</a><a href="https://www.instagram.com/islandjiujitsuwashington/" rel="noopener noreferrer" target="_blank">Instagram ↗</a><a href="https://www.facebook.com/share/1QQvcubEoh/?mibextid=wwXIfr" rel="noopener noreferrer" target="_blank">Facebook ↗</a></div></div><div class="copyright">© 2026 Island Jiu-Jitsu Washington · Class times subject to change</div></div></footer>
 </body>

@@ -1,8 +1,13 @@
 # Source stays flat for GitHub Pages; Netlify builds custom-domain slash routes.
-# The pre-launch noindex header is controlled separately in build_netlify.py.
+# Production marketing pages are indexable; previews and utilities are not.
 [build]
   command = "python3 -m pip install -r requirements.txt && python3 scripts/build_netlify.py"
   publish = "netlify-dist"
-
 [build.processing]
   skip_processing = true
+
+[context.deploy-preview.environment]
+  INDEXABLE = "false"
+
+[context.branch-deploy.environment]
+  INDEXABLE = "false"
