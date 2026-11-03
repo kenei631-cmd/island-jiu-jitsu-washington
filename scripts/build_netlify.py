@@ -53,6 +53,10 @@ for filename in ["robots.txt", "sitemap.xml", "site.webmanifest"]:
     "/assets/photo-library.css\n"
     "  Cache-Control: public, max-age=0, must-revalidate\n"
     "/assets/photo-library.js\n"
+    "  Cache-Control: public, max-age=0, must-revalidate\n"
+    "/assets/gallery.css\n"
+    "  Cache-Control: public, max-age=0, must-revalidate\n"
+    "/assets/gallery.js\n"
     "  Cache-Control: public, max-age=0, must-revalidate\n",
     encoding="utf-8",
 )

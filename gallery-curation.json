@@ -1,0 +1,246 @@
+{
+  "gym": [
+    {
+      "id": "ww-806d43dd0c4d",
+      "caption": "Together on the academy mats.",
+      "alt": "Jiu-jitsu practitioners in black, green, white, blue and purple gis smile together, seated and kneeling on blue academy mats.",
+      "focal_x": 50,
+      "focal_y": 70,
+      "roi": [
+        0.02,
+        0.36,
+        0.94,
+        0.91
+      ],
+      "source_name": "IMG_4902.jpeg",
+      "reason": "Strong landscape homepage-preview option: an approachable, adult-centered academy community with varied apparent ages and builds. Its essentially native 4:3 frame preserves every face and the seated participants' feet. Use this exact catalog entry, not the visually identical IMG_4902 2 entry; do not label it an adult-only or beginner class."
+    },
+    {
+      "id": "ww-f352f28f298d",
+      "caption": "A ground-position demonstration.",
+      "alt": "An instructor in a blue gi demonstrates a ground position with a partner in a black gi while children sit nearby on blue mats.",
+      "focal_x": 50,
+      "focal_y": 100,
+      "roi": [
+        0.0,
+        0.28,
+        1.0,
+        1.0
+      ],
+      "source_name": "IMG_4823.JPG",
+      "reason": "Clear teaching action rather than another portrait. Native inspection and a temporary 4:3 crop proof confirmed that 50% 100% positioning removes the upper quarter of this square source, mostly empty wall, while retaining the instructor's head and hands, the partner, and all observer heads visible in the source. Edge observers are already partly outside the original frame; the crop does not worsen that."
+    },
+    {
+      "id": "ww-d4ff997f889b",
+      "caption": "Smiles at the academy.",
+      "alt": "Two smiling jiu-jitsu practitioners in blue and black gis stand together in front of a padded academy wall.",
+      "focal_x": 50,
+      "focal_y": 100,
+      "roi": [
+        0.14,
+        0.515,
+        0.87,
+        1.0
+      ],
+      "source_name": "IMG_5777.jpeg",
+      "reason": "Especially warm, personable homepage-preview alternative and a distinct two-person community moment. Although the source is portrait-oriented, both people occupy its lower half: a natively inspected bottom-aligned 4:3 crop retains both heads, belts and source-visible hands while excluding the large wall portrait above. Must use 50% 100%, not center. This is an academy portrait, not evidence of a women-only class or either person's coaching identity."
+    },
+    {
+      "id": "ww-bc896f8c96a0",
+      "caption": "Young students and adults together.",
+      "alt": "Young jiu-jitsu students in colorful gis stand behind adults seated on the gray academy mats for a smiling group photograph.",
+      "focal_x": 50,
+      "focal_y": 55,
+      "roi": [
+        0.06,
+        0.3,
+        0.96,
+        0.86
+      ],
+      "source_name": "IMG_5701.jpeg",
+      "reason": "Adds a bright, welcoming youth-and-adult community scene distinct from the smaller adult-centered group. Native 4:3 composition keeps the standing heads, participants at both sides, and seated adults visible without a meaningful crop. Do not also select the visually identical IMG_5701-1 entry."
+    },
+    {
+      "id": "ww-09e4ebab0929",
+      "caption": "Watching a standing demonstration.",
+      "alt": "Two adults in black and white gis demonstrate a standing grip while young students sit facing them on blue academy mats.",
+      "focal_x": 50,
+      "focal_y": 88,
+      "roi": [
+        0.02,
+        0.38,
+        0.98,
+        0.84
+      ],
+      "source_name": "IMG_4786.JPG",
+      "reason": "Complements the close ground demonstration with a wider, easy-to-understand lesson and a semicircle of attentive young participants. A natively inspected 4:3 crop proof at 50% 88% retains both demonstrators, the grip, and the seated students while removing excess ceiling and foreground mat from the square source."
+    },
+    {
+      "id": "ww-7a13add645aa",
+      "caption": "Movement practice across the mats.",
+      "alt": "Jiu-jitsu practitioners in varied-color gis practice floor movements across blue mats, with seated observers along the back wall.",
+      "focal_x": 50,
+      "focal_y": 65,
+      "roi": [
+        0.0,
+        0.27,
+        1.0,
+        1.0
+      ],
+      "source_name": "IMG_3736.jpeg",
+      "reason": "An everyday academy overview showing varied apparent ages moving on the mats, rather than competition or another group portrait. Native 4:3 framing preserves all source-visible foreground and background faces; people partly outside the original edges remain as photographed. Provides useful room atmosphere and broader participation context."
+    },
+    {
+      "id": "ww-959345a0c606",
+      "caption": "Moving together across the mats.",
+      "alt": "Young jiu-jitsu students in colorful gis run toward the camera across gray mats in the bright academy.",
+      "focal_x": 50,
+      "focal_y": 50,
+      "roi": [
+        0.22,
+        0.3,
+        0.9,
+        0.59
+      ],
+      "source_name": "IMG_5688.jpeg",
+      "reason": "Adds a cheerful, energetic youth participation moment and a clear view of the academy's padded walls and mat space. The landscape source is native 4:3, with the moving group comfortably inside the frame. Describe the visible running only, not an inferred class, game or specific warm-up."
+    },
+    {
+      "id": "ww-cf5c78875dd5",
+      "caption": "Working through a ground position.",
+      "alt": "Two young practitioners in yellow and green gis practice a ground position on gray mats, with other participants nearby.",
+      "focal_x": 50,
+      "focal_y": 55,
+      "roi": [
+        0.28,
+        0.15,
+        0.94,
+        0.81
+      ],
+      "source_name": "IMG_5695-1.jpeg",
+      "reason": "Distinct close partner-practice view with clear foreground faces and hands, colorful gis and relaxed expressions, rather than an intimidating competition scene. Native 4:3 framing keeps the complete foreground pair visible. This single catalog record lists IMG_5695-1.jpeg and IMG_5695.jpeg as duplicate source files; select its ID once only. Do not infer a named technique, beginner status or coaching roles."
+    }
+  ],
+  "competition": [
+    {
+      "id": "ww-eb576026518c",
+      "caption": "Team together on competition day",
+      "alt": "Children and adults pose together in front of a red event backdrop, with medals and award belts visible.",
+      "focal_x": 50,
+      "focal_y": 50,
+      "roi": [
+        0.1,
+        0.31,
+        0.75,
+        0.98
+      ],
+      "source_name": "NAGA comp team",
+      "reason": "Recommended category preview: an authentic team portrait with clearly visible faces, hands, medals, and award belts. Native 4:3 framing preserves the group without a damaging crop; no prominent photographer watermark observed in the large variant."
+    },
+    {
+      "id": "ww-4b65f6d1614c",
+      "caption": "Working for position on the mat",
+      "alt": "Two competitors in white and black gis grapple on the ground, with their grips and leg positions visible.",
+      "focal_x": 71,
+      "focal_y": 50,
+      "roi": [
+        0.08,
+        0.13,
+        0.965,
+        0.96
+      ],
+      "source_name": "TCO-209",
+      "reason": "A clear technical-action photograph with both faces, gripping hands, and the connected leg position visible. The right-shifted 4:3 crop retains these important subjects; no prominent photographer watermark observed in the large variant."
+    },
+    {
+      "id": "ww-cbecbf9b6319",
+      "caption": "A focused exchange",
+      "alt": "Two competitors in black gis grapple on the mat, gripping each other's jackets with a foot positioned between them.",
+      "focal_x": 15,
+      "focal_y": 50,
+      "roi": [
+        0.045,
+        0.1,
+        0.85,
+        0.93
+      ],
+      "source_name": "TCO-257",
+      "reason": "A different ground exchange provides action variety rather than a near-duplicate of the white-and-black-gi matchup. The left-shifted 4:3 crop preserves both faces, gripping hands, and the visible technical foot placement; the source already cuts off the far-right body edge. No prominent photographer watermark observed in the large variant."
+    },
+    {
+      "id": "ww-f231071ad2cf",
+      "caption": "Gathering beside the competition mats",
+      "alt": "Children and adults gather in a circle on tournament mats while other participants warm up nearby.",
+      "focal_x": 50,
+      "focal_y": 50,
+      "roi": [
+        0.085,
+        0.23,
+        0.78,
+        0.75
+      ],
+      "source_name": "IMG_4025",
+      "reason": "A candid event-day scene gives prospects a different view of the team environment between posed portraits and match images. Native 4:3 framing preserves the foreground gathering, faces, and hands; no prominent photographer watermark observed in the large variant."
+    },
+    {
+      "id": "ww-4d903371f1a2",
+      "caption": "A raised-hand moment after the match",
+      "alt": "A referee raises the hand of a competitor in a black gi beside a competitor in a white gi.",
+      "focal_x": 80,
+      "focal_y": 50,
+      "roi": [
+        0.095,
+        0.012,
+        0.955,
+        0.925
+      ],
+      "source_name": "TCO-219",
+      "reason": "Adds a visibly supported post-match moment without naming competitors or asserting a placement. A right-shifted 4:3 crop preserves all three main faces and the raised hands; no prominent photographer watermark observed in the large variant."
+    },
+    {
+      "id": "ww-6f4323c506f8",
+      "caption": "A smile with medals",
+      "alt": "A smiling child in a blue gi holds medals and a round event emblem in front of an event backdrop.",
+      "focal_x": 35,
+      "focal_y": 50,
+      "roi": [
+        0.09,
+        0.03,
+        0.7,
+        0.96
+      ],
+      "source_name": "TCO-486",
+      "reason": "A clear individual medal portrait complements the action and team scenes without claiming award counts or placement. The landscape source comfortably retains the full face, both hands, and held medals in 4:3; no prominent photographer watermark observed in the large variant."
+    },
+    {
+      "id": "ww-f495504f864e",
+      "caption": "A moment on the podium",
+      "alt": "A child stands on a podium holding a large award belt in front of a red event backdrop.",
+      "focal_x": 50,
+      "focal_y": 62,
+      "roi": [
+        0.365,
+        0.32,
+        0.735,
+        0.8
+      ],
+      "source_name": "IMG_0325-1",
+      "reason": "A distinct podium celebration adds award imagery beyond the medal portrait. The portrait has sufficient space above and below the subject for a 4:3 crop at the specified vertical position, preserving the face, both hands, award belt, feet, and central podium; no prominent photographer watermark observed in the large variant."
+    },
+    {
+      "id": "ww-79acdcbd021f",
+      "caption": "Together at the event",
+      "alt": "A large group of children and adults pose together in front of a red competition backdrop, with medals and award belts visible.",
+      "focal_x": 50,
+      "focal_y": 50,
+      "roi": [
+        0.015,
+        0.19,
+        0.99,
+        0.9
+      ],
+      "source_name": "NAGA IJJ FAM",
+      "reason": "The broader event group complements the smaller team portrait, showing more of the surrounding community. Its essentially native 4:3 composition retains the people at both edges, all main faces, and held awards; no prominent photographer watermark observed in the large variant."
+    }
+  ]
+}
