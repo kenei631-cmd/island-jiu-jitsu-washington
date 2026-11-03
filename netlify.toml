@@ -1,6 +1,7 @@
-# GitHub Pages remains the current canonical site until the custom-domain launch.
+# Source stays flat for GitHub Pages; Netlify builds custom-domain slash routes.
+# The pre-launch noindex header is controlled separately in build_netlify.py.
 [build]
-  command = "python3 scripts/build_netlify.py"
+  command = "python3 -m pip install -r requirements.txt && python3 scripts/build_netlify.py"
   publish = "netlify-dist"
 
 [build.processing]

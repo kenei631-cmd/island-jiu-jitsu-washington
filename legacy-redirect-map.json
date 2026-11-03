@@ -1,0 +1,56 @@
+{
+  "domain": "https://www.islandjiujitsuwa.com",
+  "discovery_date": "2026-11-03",
+  "google_queries": [
+    {
+      "query": "site:islandjiujitsuwa.com",
+      "url": "https://www.google.com/search?q=site%3Aislandjiujitsuwa.com&num=100",
+      "result": "No documents returned",
+      "browser": "My Browser"
+    },
+    {
+      "query": "site:www.islandjiujitsuwa.com",
+      "url": "https://www.google.com/search?q=site%3Awww.islandjiujitsuwa.com",
+      "result": "No documents returned",
+      "browser": "My Browser"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/index.html",
+      "target": "/",
+      "title": "Home",
+      "evidence": "Previously verified original academy navigation",
+      "google_observed": false
+    },
+    {
+      "source": "/about.html",
+      "target": "/about/",
+      "title": "About Us",
+      "evidence": "Original academy About page rendered and saved November 2, 2026",
+      "google_observed": false
+    },
+    {
+      "source": "/schedule.html",
+      "target": "/schedule/",
+      "title": "Schedule / Pricing",
+      "evidence": "Previously verified original academy navigation",
+      "google_observed": false
+    },
+    {
+      "source": "/contact.html",
+      "target": "/contact/",
+      "title": "Contact",
+      "evidence": "Previously verified original academy navigation",
+      "google_observed": false
+    },
+    {
+      "source": "/blog.html",
+      "target": "/gallery/",
+      "title": "Gallery / News",
+      "evidence": "Previously verified original academy navigation; current curated gallery is the closest equivalent",
+      "google_observed": false
+    }
+  ],
+  "original_domain": "https://islandjiujitsuwa.com"
+}
