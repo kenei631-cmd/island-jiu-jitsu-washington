@@ -21,6 +21,14 @@ for url in urls:
     for link in soup.select('link[as=font]'):
         assert (OUT/link['href'].lstrip('/')).is_file(), (url,'font preload path')
 
+form=BeautifulSoup((OUT/'contact/index.html').read_text(),'html.parser').select_one('form[name="offer-inquiry"]')
+assert form and form.get('data-netlify')=='true' and form['action']=='/thank-you/'
+assert form.select_one('input[name="form-name"]')['value']=='offer-inquiry'
+assert form.get('netlify-honeypot')=='bot-field'
+for name in ['name','email','program interest','message','contact permission']:
+    assert form.find(attrs={'name':name}).has_attr('required'), name
+assert 'formsubmit.co' not in str(form)
+
 # _headers scope must be parsed by exact rule, not a substring of a private wildcard.
 blocks={};current=None
 for line in (OUT/'_headers').read_text().splitlines():

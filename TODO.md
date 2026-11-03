@@ -9,6 +9,7 @@
 ## Remaining follow-ups, not claimed complete
 
 - [ ] Use Search Console URL Inspection to request recrawling of key marketing URLs and monitor indexing after removal of the production noindex blocker. Google indexing, ranking and favicon appearance are not guaranteed.
-- [ ] Complete an end-to-end FormSubmit test with confirmed recipient inbox delivery. Field validation and submission contract passed, but human verification prevented confirmation of delivery.
+- [x] Make the offer inquiry form collect submissions in Netlify, preserving the current fields, required-field validation, layout and thank-you destination. Send one clearly labeled administrative test lead through the live browser form and verify the matching record in Netlify. Native form `offer-inquiry` was detected on deployment 6aea5d7befdf652491e0b3bf. The single test `IJJ-NETLIFY-20261103-NATIVE-01` was received at 22:22:50 UTC on November 3, 2026, initially classified as spam, then marked verified without disabling spam protection. Submission ID: 6aea5eba796555c4c2561cfa. Private API credentials remain outside public code.
+- [ ] Configure and verify email submission notifications separately from the confirmed Netlify dashboard storage. Recipient inbox delivery is not claimed as tested.
 - [ ] Further optimize mobile gallery loading. Post-release lab Performance scores varied from 71 to 84; confirmation LCP was 2.6 seconds and CLS 0. No real-user Core Web Vitals pass has been established.
 - [ ] Configure GitHub-triggered Netlify builds separately from source synchronization. The live release was published through the existing Netlify connection, not an automatic repository build. Review the historical GitHub Pages mirror's indexing policy when consolidating hosting.

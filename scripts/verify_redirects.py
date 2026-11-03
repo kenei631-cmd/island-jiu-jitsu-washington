@@ -79,8 +79,8 @@ for path in ['/this-url-does-not-exist-ijj/', '/missing/deep/page/', '/unknown-o
     assert result.status_code == 404, (path, result.status_code)
 contact = requests.get(BASE + '/contact/', timeout=25)
 form = BeautifulSoup(contact.text, 'html.parser').form
-assert form['action'] == 'https://formsubmit.co/brandonwiygul@gmail.com'
-assert form.select_one('input[name="_next"]')['value'] == BASE + '/thank-you/'
+assert form['action'] == '/thank-you/' and form['name'] == 'offer-inquiry'
+assert form.select_one('input[name="form-name"]')['value'] == 'offer-inquiry'
 gallery = BeautifulSoup(requests.get(BASE + '/gallery/', timeout=25).text, 'html.parser')
 assert len(gallery.select('.gallery-photo')) == 20
 assert all(link['href'].startswith('/assets/photos/') for link in gallery.select('.gallery-open'))
@@ -125,4 +125,4 @@ assert BASE + '/about/' in sitemap.text and BASE + '/gallery/' in sitemap.text
 assert 'github.io' not in sitemap.text and '.html</' not in sitemap.text
 print('PASS: query strings retained, unknown pages/assets return real 404s, form/gallery unchanged, library and scripts load, sample image bytes match, sitemap uses custom-domain slash routes.', flush=True)
 print('PASS: five original non-www URLs also resolve correctly; Netlify existing host normalization adds a second 301 where needed. Inventory reports actual hop counts.', flush=True)
-print('NOTICE: marketing indexing block removed; utilities remain excluded. FormSubmit delivery remains unverified. No DNS changes made.', flush=True)
+print('NOTICE: marketing indexing block removed; utilities remain excluded. Native Netlify offer form configured; stored-submission and email checks are separate. No DNS changes made.', flush=True)

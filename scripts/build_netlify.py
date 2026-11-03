@@ -90,10 +90,13 @@ def convert_html(filename):
         data = json.loads(script.get_text())
         script.string = json.dumps(schema_urls(data), ensure_ascii=False, separators=(',', ':'))
     if filename == 'contact.html':
-        inputs = soup.select('input[name="_next"]')
-        if len(inputs) != 1:
-            raise SystemExit('Expected exactly one offer-form confirmation destination')
-        inputs[0]['value'] = SITE_ORIGIN + ROUTES['thank-you.html']
+        form = soup.select_one('form[name="offer-inquiry"]')
+        if not form or form.get('data-netlify') != 'true':
+            raise SystemExit('Expected the native Netlify offer-inquiry form')
+        inputs = form.select('input[name="form-name"]')
+        if len(inputs) != 1 or inputs[0].get('value') != 'offer-inquiry':
+            raise SystemExit('Expected exactly one matching native form-name input')
+        form['action'] = ROUTES['thank-you.html']
     # Keep the unlisted photo-library explanation consistent with stable copied asset URLs.
     if filename == 'photo-library.html':
         for link in soup.select('a[href]'):
@@ -198,4 +201,4 @@ with (ROOT / 'output/Island-Jiu-Jitsu-301-Redirect-Inventory.csv').open('w', new
     ]), encoding='utf-8')
 print(f'Netlify directory build: {len(ROUTES)} content pages plus real 404; {len(rows)} explicit 301 rules.')
 print(f'Canonical origin: {SITE_ORIGIN}; offer confirmation: {SITE_ORIGIN}/thank-you/')
-print(f'All photo assets preserved. Marketing indexable: {INDEXABLE}; utilities noindex; no DNS or form-processor changes.')
+print(f'All photo assets preserved. Marketing indexable: {INDEXABLE}; utilities noindex; native Netlify offer form; no DNS changes.')
