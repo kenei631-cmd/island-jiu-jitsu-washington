@@ -4,6 +4,7 @@ import hashlib
 import json
 import tomllib
 import xml.etree.ElementTree as ET
+from urllib.parse import urljoin, urlsplit
 from bs4 import BeautifulSoup
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -54,11 +55,33 @@ for source in photos:
     assert hashlib.sha256(source.read_bytes()).digest()==hashlib.sha256(target.read_bytes()).digest(), source.name
 assert len(json.loads((OUT/'assets/photos/library.json').read_text())['photos'])==352
 assert 'data:font' not in (OUT/'assets/site.css').read_text()
+redirect_rules=[]
 for rule in (OUT/'_redirects').read_text().splitlines():
     if not rule or rule.startswith('#'):continue
     source,target,status=rule.split()
     assert source!=target and status=='301!', rule
     if source.startswith('https://island-jiu-jitsu-washington.netlify.app'):
         assert target.startswith(ORIGIN+'/') and '/assets/' not in source, rule
+    destination=urljoin(ORIGIN+'/',target)
+    bits=urlsplit(destination)
+    assert bits.scheme=='https' and bits.netloc==urlsplit(ORIGIN).netloc, rule
+    assert bits.path.endswith('/') and not bits.query and not bits.fragment, rule
+    page=OUT/bits.path.lstrip('/')/'index.html'
+    assert page.is_file(), ('Redirect destination is not a built final page',rule)
+    canonical=BeautifulSoup(page.read_text(),'html.parser').select_one('link[rel=canonical]')
+    assert canonical and canonical['href']==destination, ('Noncanonical redirect destination',rule)
+    redirect_rules.append((source,destination))
+sources={urljoin(ORIGIN+'/',source) for source,_ in redirect_rules}
+assert all(destination not in sources for _,destination in redirect_rules), 'Chained redirect rule destination'
+legacy_paths={urlsplit(source).path for source,_ in redirect_rules if source.startswith('/')}
+for page in OUT.rglob('*.html'):
+    soup=BeautifulSoup(page.read_text(),'html.parser')
+    for link in soup.select('a[href]'):
+        bits=urlsplit(link['href'])
+        if bits.scheme not in {'','https','http'}:continue
+        if bits.netloc and bits.netloc not in {urlsplit(ORIGIN).netloc,'islandjiujitsuwa.com'}:continue
+        assert bits.netloc!='islandjiujitsuwa.com', ('Noncanonical internal hostname',page,link['href'])
+        assert bits.path not in legacy_paths, ('Internal link requires a legacy redirect',page,link['href'])
 tomllib.loads((ROOT/'netlify.toml').read_text())
 print('PASS build:9 canonical marketing pages; production indexing open; utilities excluded;9 exact original font faces;1056 unchanged copied photo variants/352 photos; valid host/page redirects; configuration parses.')
+print('PASS redirect rules: final existing canonical destinations only; no rule-to-rule chains; internal links avoid legacy aliases. Automatic Netlify host/TLS redirects require separate live verification.')

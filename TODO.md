@@ -6,6 +6,11 @@
 - [x] Check published link/resource loading, responsive image boxes, mobile navigation and measured lab loading performance. Retain all 352 library photos and 1,056 optimized variants at existing asset paths. Resolve the isolated thumbnail request timeout with a focused HTTP 200, byte-identical retry.
 - [x] Fix confirmed technical issues, verify changes directly on the current platform before publication, deploy to the existing Netlify project and verify affected live behavior afterward. Final favicon release 6aea58f54ec34c8c9f186717 is ready in production; the final nine-page verification passed November 3, 2026 and exported page results. Credentials remain outside the website.
 
+## Direct legacy redirects
+
+- [ ] Ensure all known legacy URLs, including non-www versions, redirect directly to the final canonical page in one server-side 301 with no redirect chain. Preserve the public HTTPS www canonical hostname, accurate destination mapping, query parameters, internal linking, existing SSL, Netlify Forms and hosted photo assets. The November 3 live checks passed all 24 configured www aliases and 24 Netlify-host aliases in one hop; all 24 non-www aliases still require the automatic host 301 followed by the page 301. Do not claim this outcome complete until the non-www routing layer is replaced or reconfigured and verified live.
+- [x] Add and verify a build-time regression check requiring redirect destinations to be existing self-canonical final pages, never another redirect source. Check internal links do not use legacy aliases or the non-www hostname. The current generated site passed these checks on November 3, 2026. This protects site rules, not Netlify's automatic domain/TLS routing.
+
 ## Remaining follow-ups, not claimed complete
 
 - [ ] Use Search Console URL Inspection to request recrawling of key marketing URLs and monitor indexing after removal of the production noindex blocker. Google indexing, ranking and favicon appearance are not guaranteed.
